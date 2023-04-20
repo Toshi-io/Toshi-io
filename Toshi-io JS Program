@@ -1,0 +1,40 @@
+// create a variable to hold your NFT's
+const NFTs = []
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(_name, _affinity, _images) {
+    const NFT = {
+        "name":  _name,
+        "affinity": _affinity,
+        "images": _images,
+    }
+    NFTs.push (NFT);
+    console.log ("Minted: " + _name);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs() {
+    for(let i = 0; i < NFTs.length; i++){
+        console.log("\nID \t\t\t\t" + (i + 1));
+        console.log("\nname: \t\t\t" + NFTs[i].name);
+        console.log("affinity: \t\t\t" + NFTs[i].affinity);
+        console.log("images: \t\t\t" + NFTs[i].images); 
+    }
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply () {
+    console.log("\n" + NFTs.length);
+}
+
+// call your functions below this line
+let myNFT1 = mintNFT("SurfSharkSociety", "ArmyShark", "https://example.com/ArmyShark.png"); 
+let myNFT2 = mintNFT("BoardApeYatchClub", "MonkeyPrince", "https://example.com/MonkeyPrince.png"); 
+let myNFT3 = mintNFT("HonestFarmerClub", "Howdy", "https://example.com/Howdy.png"); 
+let myNFT4 = mintNFT("AxieInfinity", "Bird", "https://example.com/Bird.png"); 
+let myNFT5 = mintNFT("Nakamigos", "NinjaPixel", "https://example.com/NinjanPixel.png"); 
+listNFTs();
+getTotalSupply();
